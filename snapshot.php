@@ -19,12 +19,12 @@ $version = $json->{'latest'}->{'snapshot'};
 $release = $json->{'latest'}->{'release'};
 
 foreach ($json->{'versions'} as $getVersion) {
-	if($getVersion->{'id'} == $version) {
-		$getVersionURL = $getVersion->{'url'};
-	}
+    if ($getVersion->{'id'} == $version) {
+        $getVersionURL = $getVersion->{'url'};
+    }
 }
 
-$json = api($getVersionURL);
+$json     = api($getVersionURL);
 $download = $json->{'downloads'}->{'server'}->{'url'};
 
 echo $download;
